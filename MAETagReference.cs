@@ -80,8 +80,8 @@ namespace HaloAnimationEditor
 			this.Info = "";
 
 			RegistryKey rk = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Microsoft Games\\Halo HEK");
-
-			this.SelectTag.InitialDirectory = (string)rk.GetValue("EXE Path") + "\\tags\\";
+			if (rk != null)
+				this.SelectTag.InitialDirectory = (string)rk.GetValue("EXE Path") + "\\tags\\";
 		}
 
 		/// <summary> 
